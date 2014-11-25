@@ -30,4 +30,22 @@ public class MailClient
     {
         return server.getNextMailItem(user);
     }
+    
+    /**
+     * Disponga de un método llamado `printNextMailItem` que recupere del servidor el siguiente correo (un objeto `MailItem`) que tenga el usuario e imprima por pantalla los datos de dicho mensaje. Si no hay ningun mensaje, 
+     * que muestre un mensaje por pantalla informando de ello. 
+     */
+    public void printNextMailItem()
+    {
+        MailItem item = server.getNextMailItem (user);
+        if (server.getNextMailItem(user) != null) 
+        {
+            item.print();
+        }
+        else {
+            System.out.println("Noy hay mensaje nuevo");
+        }
+    }
+    
+    
 }
