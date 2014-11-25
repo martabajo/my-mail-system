@@ -2,4 +2,7 @@
 comment0.params=newServer\ newUser
 comment0.target=MailClient(MailServer,\ java.lang.String)
 comment0.text=\r\n\ Disponga\ de\ un\ constructor\ que\ permita\ crear\ un\ objeto\ `MailClient`\ inicializando\ sus\ atributos\ por\ medio\ de\ par\u00E1metros.\r\n
-numComments=1
+comment1.params=
+comment1.target=MailItem\ getNextMailItem()
+comment1.text=\r\n\ Disponga\ de\ un\ m\u00E9todo\ llamado\ `getNextMailItem`\ que\ recupere\ del\ servidor\ el\ siguiente\ correo\ (un\ objeto\ `MailItem`)\ que\ tenga\ el\ usuario\ y\ devuelva\ dicho\ objeto.\r\n
+numComments=2

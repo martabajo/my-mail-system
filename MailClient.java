@@ -22,4 +22,12 @@ public class MailClient
         server = newServer;
         user = newUser;
     }
+    
+    /**
+     * Disponga de un método llamado `getNextMailItem` que recupere del servidor el siguiente correo (un objeto `MailItem`) que tenga el usuario y devuelva dicho objeto.
+     */
+    public MailItem getNextMailItem()
+    {
+        return server.getNextMailItem(user);
+    }
 }
