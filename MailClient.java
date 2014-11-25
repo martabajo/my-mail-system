@@ -32,7 +32,8 @@ public class MailClient
     }
     
     /**
-     * Disponga de un método llamado `printNextMailItem` que recupere del servidor el siguiente correo (un objeto `MailItem`) que tenga el usuario e imprima por pantalla los datos de dicho mensaje. Si no hay ningun mensaje, 
+     * Disponga de un método llamado `printNextMailItem` que recupere del servidor el siguiente correo (un objeto `MailItem`) que tenga el 
+     * usuario e imprima por pantalla los datos de dicho mensaje. Si no hay ningun mensaje, 
      * que muestre un mensaje por pantalla informando de ello. 
      */
     public void printNextMailItem()
@@ -46,6 +47,14 @@ public class MailClient
             System.out.println("Noy hay mensaje nuevo");
         }
     }
-    
-    
+    /**
+     * Disponga de un método llamado `sendMailItem` que reciba 2 parámetros (un `String` indicando para quién es el mensaje y 
+     * otro `String` indicando el contenido del mensaje), cree un email (objeto `MailItem`)
+     * basándose en la información de dichos parámetros y lo envíe al servidor asociado a ese cliente.
+     */
+     public void sendMailItem(String user, String to, String message)
+    {
+        MailItem item = new MailItem(user, to, message);
+        server.post(item);
+    }
 }
