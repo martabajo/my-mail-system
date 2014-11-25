@@ -13,4 +13,13 @@ public class MailClient
 {
     private MailServer server;
     private String user;
+    
+    /**
+     * Disponga de un constructor que permita crear un objeto `MailClient` inicializando sus atributos por medio de parámetros.
+     */
+    public MailClient(MailServer newServer, String newUser)
+    {
+        server = newServer;
+        user = newUser;
+    }
 }
