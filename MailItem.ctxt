@@ -1,2 +1,5 @@
 #BlueJ class context
-numComments=0
+comment0.params=newFrom\ newTo\ newMessage
+comment0.target=MailItem(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment0.text=\r\n\ Disponga\ de\ un\ constructor\ que\ permita\ crear\ un\ objeto\ `MailItem`\ inicializando\ \r\n\tsus\ atributos\ por\ medio\ de\ par\u00E1metros.\r\n
+numComments=1
