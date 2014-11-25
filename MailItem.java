@@ -16,8 +16,8 @@ public class MailItem
    
    
    /**
-    * Disponga de un constructor que permita crear un objeto `MailItem` inicializando 
-	sus atributos por medio de parámetros.
+    *Disponga de un constructor que permita crear un objeto `MailItem` inicializando 
+    *sus atributos por medio de parámetros.
     */
    public MailItem(String newFrom, String newTo, String newMessage)
     {
@@ -42,5 +42,15 @@ public class MailItem
    public String getMessage()
     {
         return message;
+    }
+    /**
+     *Disponga de un método `print` que no tenga parámetros y que muestre por     
+     *pantalla los atributos del objeto.
+     */
+    public void print()
+    {
+        System.out.println("From: " + from);
+        System.out.println("To: " + to);
+        System.out.println("Message: " + message);
     }
 }
