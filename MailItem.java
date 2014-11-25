@@ -25,4 +25,22 @@ public class MailItem
         to = newTo;
         message = newMessage;
     }
+    
+   /**
+     * Disponga de 3 métodos getter.
+     */
+    public String getFrom()
+    {
+        return from;
+    }
+    
+   public String getTo()
+    {
+        return to;
+    }
+    
+   public String getMessage()
+    {
+        return message;
+    }
 }

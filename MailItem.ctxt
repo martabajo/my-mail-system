@@ -2,4 +2,11 @@
 comment0.params=newFrom\ newTo\ newMessage
 comment0.target=MailItem(java.lang.String,\ java.lang.String,\ java.lang.String)
 comment0.text=\r\n\ Disponga\ de\ un\ constructor\ que\ permita\ crear\ un\ objeto\ `MailItem`\ inicializando\ \r\n\tsus\ atributos\ por\ medio\ de\ par\u00E1metros.\r\n
-numComments=1
+comment1.params=
+comment1.target=java.lang.String\ getFrom()
+comment1.text=\r\n\ Disponga\ de\ 3\ m\u00E9todos\ getter.\r\n
+comment2.params=
+comment2.target=java.lang.String\ getTo()
+comment3.params=
+comment3.target=java.lang.String\ getMessage()
+numComments=4
