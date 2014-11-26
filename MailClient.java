@@ -1,4 +1,3 @@
-
 /**
  * Write a description of class MailClient here.
  * 
@@ -11,7 +10,9 @@
  */
 public class MailClient
 {
+    //servidor asociado al cliente.
     private MailServer server;
+    //Almacena la direccion de correo del usuario que usa el cliente.
     private String user;
     
     /**
@@ -32,14 +33,13 @@ public class MailClient
     }
     
     /**
-     * Disponga de un método llamado `printNextMailItem` que recupere del servidor el siguiente correo (un objeto `MailItem`) que tenga el 
-     * usuario e imprima por pantalla los datos de dicho mensaje. Si no hay ningun mensaje, 
+     * Disponga de un método llamado `printNextMailItem` que recupere del servidor el siguiente correo (un objeto `MailItem`) que tenga el usuario e imprima por pantalla los datos de dicho mensaje. Si no hay ningun mensaje, 
      * que muestre un mensaje por pantalla informando de ello. 
      */
     public void printNextMailItem()
     {
         MailItem item = server.getNextMailItem (user);
-        if (server.getNextMailItem(user) != null) 
+        if (item != null) 
         {
             item.print();
         }

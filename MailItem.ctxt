@@ -1,14 +1,16 @@
 #BlueJ class context
-comment0.params=newFrom\ newTo\ newMessage
+comment0.params=from\ to\ message
 comment0.target=MailItem(java.lang.String,\ java.lang.String,\ java.lang.String)
 comment0.text=\r\nDisponga\ de\ un\ constructor\ que\ permita\ crear\ un\ objeto\ `MailItem`\ inicializando\ \r\nsus\ atributos\ por\ medio\ de\ par\u00E1metros.\r\n
 comment1.params=
 comment1.target=java.lang.String\ getFrom()
-comment1.text=\r\n\ Disponga\ de\ 3\ m\u00E9todos\ getter.\r\n
+comment1.text=\r\n\ Disponga\ de\ 3\ m\u00E9todos\ getter.\ Devuelve\ la\ direccion\ de\ origen.\r\n
 comment2.params=
 comment2.target=java.lang.String\ getTo()
+comment2.text=\r\n\ Devuelve\ la\ direccion\ de\ destino\ del\ mensaje\r\n
 comment3.params=
 comment3.target=java.lang.String\ getMessage()
+comment3.text=\r\n\ Devuelve\ el\ contenido\ del\ mensaje.\r\n
 comment4.params=
 comment4.target=void\ print()
 comment4.text=\r\nDisponga\ de\ un\ m\u00E9todo\ `print`\ que\ no\ tenga\ par\u00E1metros\ y\ que\ muestre\ por\ \ \ \ \ \r\npantalla\ los\ atributos\ del\ objeto.\r\n

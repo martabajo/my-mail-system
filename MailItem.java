@@ -1,4 +1,3 @@
-
 /**
  * Write a description of class MailItem here.
  * 
@@ -10,39 +9,45 @@
  */
 public class MailItem
 {
-   private String from;
-   private String to;
-   private String message;
-   
-   
-   /**
-    *Disponga de un constructor que permita crear un objeto `MailItem` inicializando 
-    *sus atributos por medio de parámetros.
-    */
-   public MailItem(String newFrom, String newTo, String newMessage)
+    private String from;
+    private String to;
+    private String message;
+
+    /**
+     *Disponga de un constructor que permita crear un objeto `MailItem` inicializando 
+     *sus atributos por medio de parámetros.
+     */
+    public MailItem(String from, String to, String message)
     {
-        from = newFrom;
-        to = newTo;
-        message = newMessage;
+        this.from = from;
+        this.to = to;
+        this.message = message;
     }
-    
-   /**
-     * Disponga de 3 métodos getter.
+
+    /**
+     * Disponga de 3 métodos getter. Devuelve la direccion de origen.
      */
     public String getFrom()
     {
         return from;
     }
-    
-   public String getTo()
+
+    /**
+     * Devuelve la direccion de destino del mensaje
+     */
+    public String getTo()
     {
         return to;
     }
-    
-   public String getMessage()
+
+    /**
+     * Devuelve el contenido del mensaje.
+     */
+    public String getMessage()
     {
         return message;
     }
+
     /**
      *Disponga de un método `print` que no tenga parámetros y que muestre por     
      *pantalla los atributos del objeto.
