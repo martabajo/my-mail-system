@@ -63,6 +63,7 @@ public class MailClient
      */
     public void howManyMailItems()
     {
-        System.out.prinyln("En tu bandeja tienes: " server.howManyMailItems(user) "mensajes");
+        int numero = server.howManyMailItems(user);
+        System.out.println("En tu bandeja tienes: " + numero + "mensajes");
     }
 }
