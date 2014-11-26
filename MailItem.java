@@ -17,11 +17,12 @@ public class MailItem
      *Disponga de un constructor que permita crear un objeto `MailItem` inicializando 
      *sus atributos por medio de parámetros.
      */
-    public MailItem(String from, String to, String message)
+    public MailItem(String from, String to, String message, String subject)
     {
         this.from = from;
         this.to = to;
         this.message = message;
+        this.subject = subject;
     }
 
     /**
@@ -57,5 +58,6 @@ public class MailItem
         System.out.println("From: " + from);
         System.out.println("To: " + to);
         System.out.println("Message: " + message);
+        System.out.println("MSubject: " + subject);
     }
 }
