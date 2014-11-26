@@ -49,6 +49,11 @@ public class MailItem
         return message;
     }
 
+    public String getsubject()
+    {
+        return subject;
+    }
+
     /**
      *Disponga de un método `print` que no tenga parámetros y que muestre por     
      *pantalla los atributos del objeto.
@@ -58,6 +63,6 @@ public class MailItem
         System.out.println("From: " + from);
         System.out.println("To: " + to);
         System.out.println("Message: " + message);
-        System.out.println("MSubject: " + subject);
+        System.out.println("Subject: " + subject);
     }
 }
