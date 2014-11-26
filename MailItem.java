@@ -12,7 +12,7 @@ public class MailItem
     private String from;
     private String to;
     private String message;
-
+    private String subject;
     /**
      *Disponga de un constructor que permita crear un objeto `MailItem` inicializando 
      *sus atributos por medio de parámetros.
