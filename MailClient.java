@@ -18,10 +18,10 @@ public class MailClient
     /**
      * Disponga de un constructor que permita crear un objeto `MailClient` inicializando sus atributos por medio de parámetros.
      */
-    public MailClient(MailServer newServer, String newUser)
+    public MailClient(MailServer server, String user)
     {
-        server = newServer;
-        user = newUser;
+        this.server = server;
+        this.user = user;
     }
     
     /**
