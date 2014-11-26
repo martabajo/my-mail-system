@@ -57,4 +57,12 @@ public class MailClient
         MailItem item = new MailItem(user, to, message, subject);
         server.post(item);
     }
+    
+    /**
+     * Crear un metodo que nos diga cuantos emails tenemos.
+     */
+    public void howManyMailItems()
+    {
+        System.out.prinyln("En tu bandeja tienes: " server.howManyMailItems(user) "mensajes");
+    }
 }
