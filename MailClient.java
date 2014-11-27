@@ -74,7 +74,7 @@ public class MailClient
     public void getNextMailItemAndAutorespond ()
     {
         MailItem item = server.getNextMailItem(user);
-        String newSubject= "RE: " + item.getSubject;
+        String newSubject= "RE: " + item.getSubject();
         String newMessage = "" + item.getMessage() + "Estamos de vacaciones no podemos contestar.";
         MailItem newMail = new MailItem(item.getTo(), item.getFrom(), newSubject, newMessage);
         server.post(newMail);
