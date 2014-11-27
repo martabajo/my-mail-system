@@ -49,7 +49,7 @@ public class MailItem
         return message;
     }
 
-    public String getsubject()
+    public String getSubject()
     {
         return subject;
     }

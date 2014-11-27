@@ -14,7 +14,7 @@ public class MailClient
     private MailServer server;
     //Almacena la direccion de correo del usuario que usa el cliente.
     private String user;
-    
+
     /**
      * Disponga de un constructor que permita crear un objeto `MailClient` inicializando sus atributos por medio de parámetros.
      */
@@ -23,7 +23,7 @@ public class MailClient
         this.server = server;
         this.user = user;
     }
-    
+
     /**
      * Disponga de un método llamado `getNextMailItem` que recupere del servidor el siguiente correo (un objeto `MailItem`) que tenga el usuario y devuelva dicho objeto.
      */
@@ -31,7 +31,7 @@ public class MailClient
     {
         return server.getNextMailItem(user);
     }
-    
+
     /**
      * Disponga de un método llamado `printNextMailItem` que recupere del servidor el siguiente correo (un objeto `MailItem`) que tenga el usuario e imprima por pantalla los datos de dicho mensaje. Si no hay ningun mensaje, 
      * que muestre un mensaje por pantalla informando de ello. 
@@ -47,17 +47,18 @@ public class MailClient
             System.out.println("Noy hay mensaje nuevo");
         }
     }
+
     /**
      * Disponga de un método llamado `sendMailItem` que reciba 2 parámetros (un `String` indicando para quién es el mensaje y 
      * otro `String` indicando el contenido del mensaje), cree un email (objeto `MailItem`)
      * basándose en la información de dichos parámetros y lo envíe al servidor asociado a ese cliente.
      */
-     public void sendMailItem(String to, String message, String subject)
+    public void sendMailItem(String to, String message, String subject)
     {
         MailItem item = new MailItem(user, to, message, subject);
         server.post(item);
     }
-    
+
     /**
      * Crear un metodo que nos diga cuantos emails tenemos.
      */
@@ -65,5 +66,18 @@ public class MailClient
     {
         int numero = server.howManyMailItems(user);
         System.out.println("En tu bandeja tienes: " + numero + "mensajes");
+    }
+
+    /**
+     * Crear un metodo getNextMailItemAndAutorespond que nos devuelva un mensaje.
+     */
+    public void getNextMailItemAndAutorespond ()
+    {
+        MailItem item = server.getNextMailItem(user);
+        String newSubject= "RE: " + item.getSubject;
+        String newMessage = "" + item.getMessage() + "Estamos de vacaciones no podemos contestar.";
+        MailItem newMail = new MailItem(item.getTo(), item.getFrom(), newSubject, newMessage);
+        server.post(newMail);
+        
     }
 }
