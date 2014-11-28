@@ -14,6 +14,8 @@ public class MailClient
     private MailServer server;
     //Almacena la direccion de correo del usuario que usa el cliente.
     private String user;
+    //Nuevo atributo
+    private MailItem lastEmail;
 
     /**
      * Disponga de un constructor que permita crear un objeto `MailClient` inicializando sus atributos por medio de parámetros.
@@ -29,7 +31,8 @@ public class MailClient
      */
     public MailItem getNextMailItem()
     {
-        return server.getNextMailItem(user);
+        lastEmail = server.getNextMailItem(user);
+        return lastEmail;
     }
 
     /**
@@ -39,9 +42,11 @@ public class MailClient
     public void printNextMailItem()
     {
         MailItem item = server.getNextMailItem (user);
+        lastEmail = item;
         if (item != null) 
         {
             item.print();
+            lastEmail = item;
         }
         else {
             System.out.println("Noy hay mensaje nuevo");
@@ -67,7 +72,7 @@ public class MailClient
         int numero = server.howManyMailItems(user);
         System.out.println("En tu bandeja tienes: " + numero + " mensajes");
     }
-    
+
     /**
      * Crear un metodo getNextMailItemAndAutorespond que nos devuelva un mensaje.
      */
@@ -84,4 +89,20 @@ public class MailClient
         }
 
     }
+
+    /**
+     * Ver por pantalla cuantas veces queramos los datos del ultimo mensaje recibido.
+     */
+    public void printLastMailItem()
+    {
+        if (lastEmail != null)
+        {
+            lastEmail.print();
+        }
+        else
+        {
+            System.out.println("No tienes mensajes nuevos");
+        }
+    }
+
 }
