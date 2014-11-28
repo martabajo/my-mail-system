@@ -36,21 +36,40 @@ public class MailClient
     }
 
     /**
-     * Disponga de un método llamado `printNextMailItem` que recupere del servidor el siguiente correo (un objeto `MailItem`) que tenga el usuario e imprima por pantalla los datos de dicho mensaje. Si no hay ningun mensaje, 
+     * Disponga de un método llamado `printNextMailItem` que recupere del servidor el siguiente correo (un objeto 
+     * `MailItem`) que tenga el usuario e imprima por pantalla los datos de dicho mensaje. Si no hay ningun mensaje, 
      * que muestre un mensaje por pantalla informando de ello. 
      */
     public void printNextMailItem()
     {
         MailItem item = server.getNextMailItem (user);
         lastEmail = item;
-        if (item != null) 
+        String spam = "viagra";
+        String spam2 = "oferta";
+        String noSpam = "proyecto";
+        boolean found = false;
+        boolean found2 = true;
+        if (item.getMessage().contains(spam) || item.getMessage().contains(spam2))
         {
+            found = true;
+        }
+        if (item.getMessage().contains(noSpam))
+        {
+            found2 = true;
+        }
+        if (item==null)
+        {
+            System.out.println("No hay mensajes nuevos");
+        }
+        else if ((found==true)&&(found2==false))
+        {
+            System.out.println("Este mensaje contenía spam");
+        }
+        else
+        {                
+            lastEmail= item;
             item.print();
-            lastEmail = item;
-        }
-        else {
-            System.out.println("Noy hay mensaje nuevo");
-        }
+        }            
     }
 
     /**
