@@ -65,19 +65,23 @@ public class MailClient
     public void howManyMailItems()
     {
         int numero = server.howManyMailItems(user);
-        System.out.println("En tu bandeja tienes: " + numero + "mensajes");
+        System.out.println("En tu bandeja tienes: " + numero + " mensajes");
     }
-
+    
     /**
      * Crear un metodo getNextMailItemAndAutorespond que nos devuelva un mensaje.
      */
     public void getNextMailItemAndAutorespond ()
     {
         MailItem item = server.getNextMailItem(user);
-        String newSubject= "RE: " + item.getSubject();
-        String newMessage = "" + item.getMessage() + "Estamos de vacaciones no podemos contestar.";
-        MailItem newMail = new MailItem(item.getTo(), item.getFrom(), newSubject, newMessage);
-        server.post(newMail);
-        
+        if (item != null)
+        {
+            String newTo = item.getFrom();
+            String newSubject= "RE: " + item.getSubject();
+            String newMessage = "Estoy de vacaciones. \n " + item.getMessage();
+            MailItem autorespond = new MailItem(user, newTo, newMessage, newSubject);
+            server.post(autorespond);
+        }
+
     }
 }
