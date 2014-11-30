@@ -22,4 +22,6 @@ comment6.target=void\ printLastMailItem()
 comment6.text=\r\n\ Ver\ por\ pantalla\ cuantas\ veces\ queramos\ los\ datos\ del\ ultimo\ mensaje\ recibido.\r\n
 comment7.params=
 comment7.target=void\ datosCorreo()
-numComments=8
+comment8.params=
+comment8.target=void\ printLastMailSpam()
+numComments=9

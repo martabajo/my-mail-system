@@ -21,6 +21,7 @@ public class MailClient
     private int contarSpam;
     private int contarCaracter;
     private String emailCaracter;
+    private MailItem lastMailSpam;
 
     /**
      * Disponga de un constructor que permita crear un objeto `MailClient` inicializando sus atributos por medio de parámetros.
@@ -33,6 +34,7 @@ public class MailClient
         contarRecibir = 0;
         contarCaracter = 0;
         emailCaracter = "";
+
     }
 
     /**
@@ -150,4 +152,15 @@ public class MailClient
             "Remitente con nombre de email mas largo:" + emailCaracter);
     }
 
+    public void printLastMailSpam()
+    {
+        if (lastMailSpam != null)
+        {
+            lastMailSpam.print();
+        }
+        else 
+        {
+            System.out.println ("No hay mensajes de spam");
+        }
+    }
 }
