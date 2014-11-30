@@ -16,6 +16,11 @@ public class MailClient
     private String user;
     //Nuevo atributo
     private MailItem lastEmail;
+    private int contarEnviar;
+    private int contarRecibir;
+    private int contarSpam;
+    private int contarCaracter;
+    private String emailCaracter;
 
     /**
      * Disponga de un constructor que permita crear un objeto `MailClient` inicializando sus atributos por medio de parámetros.
@@ -24,6 +29,10 @@ public class MailClient
     {
         this.server = server;
         this.user = user;
+        contarEnviar = 0;
+        contarRecibir = 0;
+        contarCaracter = 0;
+        emailCaracter = "";
     }
 
     /**
@@ -122,6 +131,23 @@ public class MailClient
         {
             System.out.println("No tienes mensajes nuevos");
         }
+    }
+
+    public void datosCorreo()
+    {
+        float datos;
+        if (contarRecibir != 0)
+        {
+            datos = ((float)contarSpam/contarRecibir) * (100);
+        }
+        else
+        {
+            datos = 0;
+        }
+        System.out.println("Correos enviados:" + contarEnviar + "\n" +
+            "Correos recibidos:" + contarRecibir + "\n" +
+            "Porcentaje de spam:" + datos + "%" + "\n" +
+            "Remitente con nombre de email mas largo:" + emailCaracter);
     }
 
 }
